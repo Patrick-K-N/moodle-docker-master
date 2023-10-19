@@ -1,0 +1,9 @@
+version: "2"
+services:
+  webserver:
+    volumes:
+      - "${ASSETDIR}/web/apache2_mailpit.conf:/etc/apache2/conf-enabled/apache2_mailpit.conf"
+    depends_on:
+      - mailpit
+  mailpit:
+    image: axllent/mailpit
